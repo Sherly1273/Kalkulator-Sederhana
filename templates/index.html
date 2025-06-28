@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Kalkulator</title>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>Kalkulator</h1>
+    <form method="post">
+      <!-- Menampilkan input dan hasil -->
+      <input type="text" name="input" id="input" readonly value="{{ input }}{% if hasil is not none %}={{ hasil }}{% endif %}">
+      
+      <div class="buttons">
+        {% for row in [['7', '8', '9', '/'], ['4', '5', '6', '*'], ['1', '2', '3', '-'], ['0', '.', '=', '+']] %}
+          <div class="row">
+            {% for btn in row %}
+              {% if btn == '=' %}
+                <button type="submit" name="submit" value="=">{{ btn }}</button>
+              {% else %}
+                <button type="button" onclick="addToInput('{{ btn }}')">{{ btn }}</button>
+              {% endif %}
+            {% endfor %}
+          </div>
+        {% endfor %}
+        <div class="row">
+          <button type="button" onclick="backspace()">⌫</button>
+          <button type="button" onclick="clearInput()">C</button>
+        </div>
+      </div>
+    </form>
+    <footer>
+      <p>&copy; 2025 Sherly</p>
+    </footer>
+  </div>
+  <script>
+    function addToInput(value) {
+      document.getElementById('input').value += value;
+    }
+
+    function clearInput() {
+      document.getElementById('input').value = '';
+    }
+
+    function backspace() {
+      let input = document.getElementById('input');
+      input.value = input.value.slice(0, -1);
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'VT323', monospace;
+  font-size: 1,9rem;
+  background-image: url(Pink\ wallpapers.jpg);
+  background-repeat: no-repeat;       /* jangan diulang */
+  background-size: cover;             /* penuhi layar */
+  background-position: center center; /* letak tengah */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.container {
+  background: #C4DCFF;
+  padding: 24px 30px;
+  border-radius: 12px;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  width: 300px;
+}
+
+h1 {
+  color: #fff; 
+}
+
+
+input[type="text"] {
+  width: 100%;
+  padding: 12px;
+  font-size: 1.5rem;
+  margin-bottom: 16px;
+  text-align: right;
+  font-family: 'VT323', monospace;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+  border-radius: 6px;
+  border: none;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.row {
+  display: flex;
+  gap: 10px;
+}
+
+button {
+  flex: 1;
+  padding: 12px;
+  font-size: 1.5rem;
+  border: none;
+  border-radius: 6px;
+  background: #EFBDBD;
+  color: #fff;
+  cursor: pointer;
+  font-family: 'VT323', monospace;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+}
+
+button:hover {
+  background: #FFDFBD;
+}
+
+.result {
+  margin-top: 20px;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+footer {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #888;
+
+}
